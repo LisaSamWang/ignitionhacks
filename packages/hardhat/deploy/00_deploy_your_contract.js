@@ -20,7 +20,7 @@ module.exports = async ({ getNamedAccounts, deployments, getChainId }) => {
   await deploy("YourContract", {
     // Learn more about args here: https://www.npmjs.com/package/hardhat-deploy#deploymentsdeploy
     from: deployer,
-    // args: [ "Hello", ethers.utils.parseEther("1.5") ],
+    // args: [ "DOGECOIN", ethers.utils.parseEther("1.5") ],
     log: true,
     waitConfirmations: 5,
   });
@@ -39,6 +39,9 @@ module.exports = async ({ getNamedAccounts, deployments, getChainId }) => {
     //const YourContract = await ethers.getContractAt('YourContract', "0xaAC799eC2d00C013f1F11c37E654e59B0429DF6A") //<-- if you want to instantiate a version of a contract at a specific address!
   */
 
+    await YourContract.transferOwnership(
+      "0xFcB06313f5C003cd483471e33cB84692E0C552aE"
+    );
   /*
   //If you want to send value to an address from the deployer
   const deployerWallet = ethers.provider.getSigner()
